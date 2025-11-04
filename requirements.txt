@@ -1,0 +1,2 @@
+kagglehub==0.3.13 
+pyspark==4.0.0

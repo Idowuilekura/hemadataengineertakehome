@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  app:
+    image: idowuilekura/dockgispy:largest
+    container_name: dockgispycont
+    ports:
+      - "8000:8888"
+      - "4040:4040"
+    volumes:
+      - ./app:/app
+      - /home/idowu/Desktop/job_stuff/hema_work:/opt/workfold
+    environment:
+      - KAGGLE_HOME=/opt/kaggle
+      - DATA_FOLDER=/opt/work
+
+
