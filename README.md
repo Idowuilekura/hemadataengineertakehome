@@ -28,10 +28,11 @@ base_folder
   │   └── utils/
   │       ├── logger.py
   │       └── helpers.py
+      run_etl.py (to run the whole pipeline)
   ├── data/
-  │   ├── input/        # raw files (bronze)
-  │   ├── processed/    # silver layer
-  │   └── output/       # gold layer
+  │   ├── bronze/raw   
+  │   ├── silver/silver 
+  │   └── gold/      
   ├── tests/
   │   └── test_pipeline.py
   ├── README.md
@@ -130,7 +131,8 @@ This setup runs in a **multi-account environment**:
 
 3. **Glue & Athena**
    - AWS Glue in Account A maintains the data catalog (schemas for the gold tables).  
-   - The catalog is shared with Account B using **AWS Resource Access Manager (RAM)**.  
+   - The catalog is shared with Account B using **AWS Resource Access Manager (RAM)**.
+   - Aws Glue CrawlerCrawls the folder, and gets the schema and catalogs it in aws glue catalog for ease of reading 
    - Analysts in Account B query the gold-layer data through **Athena**, which uses the shared Glue catalog and cross-account S3 access.
 
 4. **Security**
