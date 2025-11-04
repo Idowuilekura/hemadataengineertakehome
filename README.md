@@ -109,7 +109,7 @@ This will download a file named `kaggle.json` containing your username and API k
 
 Example content:
 
-```json
+```bash
 {
   "username": "your_kaggle_username",
   "key": "your_long_api_key"
