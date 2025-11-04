@@ -83,7 +83,7 @@ Each ETL step includes structured logging and execution metadata to support trac
 
 ```bash
 git clone https://github.com/idowuilekura/hemadataengineertakehome.git
-cd hema-etl-assessment
+cd hemadataengineertakehome
 
 # Adjust the Docker volume path to point to your local project folder(this allows your files to be accessible to the container)
 docker compose up -d
@@ -92,8 +92,33 @@ docker compose up -d
 docker exec -it dockgispycont /bin/bash
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r requirements.txt . This will download the additional modules.
+
+Next, you need to get kaggle json to download the data. 
+
+
 ```
+# Set Up Kaggle API Credentials
+
+To download data from Kaggle, you need a Kaggle API token (`kaggle.json`).
+
+Go to your [Kaggle account settings](https://www.kaggle.com/account).
+
+Scroll down to the **API** section and click **“Create New API Token.”**  
+This will download a file named `kaggle.json` containing your username and API key.
+
+Example content:
+
+```json
+{
+  "username": "your_kaggle_username",
+  "key": "your_long_api_key"
+}
+
+Move the file to the correct directory:
+mkdir -p ~/.kaggle
+mv /path/to/kaggle.json ~/.kaggle/
+chmod 600 ~/.kaggle/kaggle.json
 
 ### Run
 
