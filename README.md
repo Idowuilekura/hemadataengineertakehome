@@ -17,24 +17,26 @@ The pipeline ingests raw sales data, applies transformations and business rules,
 ## 🧱 Project Structure
 
 ```
-hema_etl/
-├── config/
-│   └── spark_config.py
-├── src/
-│   ├── bronze_ingestion.py
-│   ├── silver_transformations.py
-│   ├── gold_sales_customers.py
-│   └── utils/
-│       ├── logger.py
-│       └── helpers.py
-├── data/
-│   ├── input/        # raw files (bronze)
-│   ├── processed/    # silver layer
-│   └── output/       # gold layer
-├── tests/
-│   └── test_pipeline.py
-├── README.md
-└── requirements.txt
+base_folder
+  hema_etl/
+  ├── config/
+  │   └── spark_config.py
+  ├── src/
+  │   ├── bronze_ingestion.py
+  │   ├── silver_transformations.py
+  │   ├── gold_sales_customers.py
+  │   └── utils/
+  │       ├── logger.py
+  │       └── helpers.py
+  ├── data/
+  │   ├── input/        # raw files (bronze)
+  │   ├── processed/    # silver layer
+  │   └── output/       # gold layer
+  ├── tests/
+  │   └── test_pipeline.py
+  ├── README.md
+  └── requirements.txt
+docker-compose.yml 
 ```
 
 ---
@@ -78,14 +80,19 @@ Each table includes metadata for auditing and reproducibility.
 ### Prerequisites
 - Python 3.9+
 - PySpark
-- pandas (for quick testing)
-- boto3 (optional, for AWS interactions)
+- docker and docker compose installed
 
 ### Setup
 
 ```bash
 git clone https://github.com/<your-username>/hema-etl-assessment.git
 cd hema-etl-assessment
+change the volume to the folder of the scripts (this syncs the code into the docker container that runs spark)
+docker compose up
+get the name of the container from the docker-compose file
+docker exec -it nameofcontainer /bin/bash
+this takes you inside the docker compose file
+
 pip install -r requirements.txt
 ```
 
