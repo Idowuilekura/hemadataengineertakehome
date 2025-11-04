@@ -82,7 +82,7 @@ Each ETL step includes structured logging and execution metadata to support trac
 ### Setup
 
 ```bash
-git clone https://github.com/<your-username>/hema-etl-assessment.git
+git clone https://github.com/idowuilekura/hemadataengineertakehome.git
 cd hema-etl-assessment
 
 # Adjust the Docker volume path to point to your local project folder(this allows your files to be accessible to the container)
