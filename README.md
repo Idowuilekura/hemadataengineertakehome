@@ -98,7 +98,7 @@ Next, you need to get kaggle json to download the data.
 
 
 ```
-# Set Up Kaggle API Credentials
+### Set Up Kaggle API Credentials
 
 To download data from Kaggle, you need a Kaggle API token (`kaggle.json`).
 
