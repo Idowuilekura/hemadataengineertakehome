@@ -161,7 +161,7 @@ All data is stored in **Amazon S3** in Account A:
 
 ### Catalog and Querying
 - **AWS Glue** in Account A maintains the metadata catalog (schemas for Gold tables).  
-- The catalog is **shared with Account B** using **AWS Resource Access Manager (RAM)**.  
+- The catalog is **shared with Account B** using **delegation of access via IAM roles and trust policies**.  
 - A **Glue Crawler** automatically detects schema changes and updates the catalog.  
 - Analysts in Account B use **Athena** to query the shared data directly.
 
